@@ -21,6 +21,10 @@ let stone
 let nyawa = 3
 
 window.onload = function () {
+  window.resizeTo(
+    window.screen.availWidth,
+    window.screen.availHeight
+  );
   canvas = document.getElementById('canvasku')
   context = canvas.getContext('2d');
   road = new Image()
@@ -166,3 +170,9 @@ function batu() {
     }
   }
 }
+
+window.oncontextmenu = function(event) {
+     event.preventDefault();
+     event.stopPropagation();
+     return false;
+};
