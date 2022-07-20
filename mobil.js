@@ -21,6 +21,7 @@ let stone
 let nyawa = 3
 
 window.onload = function () {
+  window.addEventListener("contextmenu", function(e) { e.preventDefault(); })
   window.resizeTo(
     window.screen.availWidth,
     window.screen.availHeight
