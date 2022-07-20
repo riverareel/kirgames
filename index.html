@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+      canvas
+      {
+          border: solid 1px black;
+      }
+  </style>
+</head>
+<body> 
+<canvas id="canvasku" width="200" height="400">
+</canvas>
+<p></p>
+<button class="button buttonleft" ontouchstart="simulateLeft()" onmousedown="simulateLeft()" ontouchend="netral()" onmouseup="netral()"><img src="asset/arrow.jpeg"></button>
+<button class="button buttonright" ontouchstart="simulateRight()" onmousedown="simulateRight()" ontouchend="netral()" onmouseup="netral()"><img src="asset/arrow.jpeg"></button>
+<script src="mobil.js"></script>
+<script>
+  
+</script>
+</body>
+<style>
+
+button, canvas {
+    position: relative;
+}
+
+button {
+    z-index: 1;
+}
+
+canvas {
+    z-index: 0;
+}
+
+</style>
+</html>
