@@ -21,7 +21,7 @@ let stone
 let nyawa = 3
 
 window.onload = function () {
-  window.addEventListener("contextmenu", function(e) { e.preventDefault(); })
+ // window.addEventListener("contextmenu", function(e) { e.preventDefault(); })
   window.resizeTo(
     window.screen.availWidth,
     window.screen.availHeight
@@ -29,7 +29,7 @@ window.onload = function () {
   canvas = document.getElementById('canvasku')
   context = canvas.getContext('2d');
   road = new Image()
-  road.src = "./asset/road.jpg"
+  road.src = "./asset/road.png"
 
   car = new Image()
   car.src = "./asset/car.png"
