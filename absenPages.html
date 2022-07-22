@@ -63,23 +63,52 @@
             <div class="col-md-6">
                 <h3 class="judulAbsen">Absen Yuk...</h3>
                 <div class="absen">
-                    <form action="">
+                    <form action="" id="uData" name="userData">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Nama" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
+                            <input required type="text" class="form-control" placeholder="Nama" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Kelas" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
+                            <input required type="text" class="form-control" placeholder="Kelas" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="No Handphone" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
+                            <input required type="number" class="form-control" placeholder="No Handphone" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
                         </div>
-                        <button type="submit" name="" id="" class="myButton"><a href="" class="linkButton">Kirim</a></button>
+                        <button onclick="click1()" id=button class="myButton">Kirim</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
+    <script>
+        function click1() {
+            var uname = document.getElementById(
+                    "uData").elements[0].value;
+            var uclass = document.getElementById(
+                    "uData").elements[1].value;
+            var uphone = document.getElementById(
+                    "uData").elements[2].value;            
+            jsonBody = {
+                "name": uname,
+                "userClass": uclass,
+                "phoneNumber": uphone
+            }
+            endpoint = "https://api.kirinthe.space/register"
+            pagegoto = ""
+            fetch(endpoint, {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                method: 'POST',
+                body: JSON.stringify(jsonBody)
+            }).then(res => res.json()).then(function validate(res){
+                if (res.status == 200){
+                    location.assign(pagegoto);
+                } else {
+                    window.alert(res.message)
+                }
+            });
+        }
+    </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>
