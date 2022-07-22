@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Absen</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+    body {
+        background-color: #0D0D29;
+        font-family: 'Anonymous Pro', monospace;
+    }
+
+    form {
+        margin: auto;
+    }
+
+    h3 {
+        color: #02B8B3;
+        padding-top: 5em;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px #02B8B3;
+    }
+
+    .absenGif {
+        margin: auto;
+    }
+
+    .myButton {
+        background-color: #02B8B3;
+        padding: 10px;
+        border-radius: 20px;
+        border-color: #02B8B3;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+    .linkButton {
+        text-decoration: none;
+        color: white;
+    }
+
+    @media screen and (max-width: 400px) {
+        .absenGif {
+            width: 250px !important;
+            height: 250px !important; 
+        }
+    }
+
+</style>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="absenGambar">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_ojjrkacr.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop  autoplay class="absenGif"></lottie-player>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3 class="judulAbsen">Absen Yuk...</h3>
+                <div class="absen">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Nama" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Kelas" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="No Handphone" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
+                        </div>
+                        <button type="submit" name="" id="" class="myButton"><a href="" class="linkButton">Kirim</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
