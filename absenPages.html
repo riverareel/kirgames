@@ -80,7 +80,7 @@
                         <div class="input-group mb-3">
                             <input required type="number" class="form-control" placeholder="No Handphone" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
                         </div>
-                        <button onclick="click1()" id=buttons class="myButton">Kirim</button>
+                        <button onclick="click1()" id=buttons class="myButton" formaction="https://kirinthe.space/landingPages.html">Kirim</button>
                     </form>
                 </div>
             </div>
@@ -110,7 +110,6 @@
             redirect: 'follow',
             body: JSON.stringify(jsonBody)
         }).then(res => res.json()).then(function redir(res) {
-	    window.alert(res);
             if (false) {
                 setTimeout(function() {location.href = "https://kirinthe.space/landingPages.html";}, 100);
             } else if (res.status_code == 400) {
