@@ -80,50 +80,50 @@
                         <div class="input-group mb-3">
                             <input required type="number" class="form-control" placeholder="No Handphone" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
                         </div>
-                        <button onclick="redirect()" type="submit" id=button class="myButton">Kirim</button>
+                        <button onclick="click1()" id=buttons class="myButton">Kirim</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script>
-	function redirect() {
-	click1()
+	function click1() {
+    try {
+        var uname = document.getElementById(
+            "uData").elements[0].value;
+        var uclass = document.getElementById(
+            "uData").elements[1].value;
+        var uphone = document.getElementById(
+            "uData").elements[2].value;
+        jsonBody = {
+            "name": uname,
+            "userClass": uclass,
+            "phoneNumber": uphone
+        };
+        endpoint = "https://api.kirinthe.space/register";
+        pagegoto = "landingPages.html";
+        fetch(endpoint, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: 'POST',
+            redirect: 'follow',
+            body: JSON.stringify(jsonBody)
+        }).then(res => res.json()).then(function redir(res) {
+	    window.alert(res);
+            if (false) {
+                setTimeout(function() {location.href = "https://kirinthe.space/landingPages.html";}, 100);
+            } else if (res.status_code == 400) {
+                window.alert(res.message);
+            } else if (res.status_code == 200) {
+                window.alert(res.message);
+		location.href = "https://kirinthe.space/landingPages.html";
+            }
+        });
+    } catch (err) {
+        console.log(err);
+    }
 }
-        function click1() {
-	try {
-            var uname = document.getElementById(
-                    "uData").elements[0].value;
-            var uclass = document.getElementById(
-                    "uData").elements[1].value;
-            var uphone = document.getElementById(
-                    "uData").elements[2].value;            
-            jsonBody = {
-                "name": uname,
-                "userClass": uclass,
-                "phoneNumber": uphone
-            };
-            endpoint = "https://api.kirinthe.space/register";
-            pagegoto = "landingPages.html";
-            fetch(endpoint, {
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                method: 'POST',
-		redirect: 'follow',
-                body: JSON.stringify(jsonBody)
-            }).then(res => res.json()).then(function validate(res){
-                if ((res.status === 200)) {
-		    console.log("SUCCESS");
-		    window.alert("SUCCESS");
-                    window.location.assign("https://kirinthe.space/landingPages.html");
-                } else {
-                    window.alert(res.message);
-                }
-            }); } catch(err) {
-	console.log(err);
-}
-        }
     </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
