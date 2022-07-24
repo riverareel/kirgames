@@ -80,14 +80,27 @@
                         <div class="input-group mb-3">
                             <input required type="number" class="form-control" placeholder="No Handphone" aria-label="Recipient's username" aria-describedby="button-addon2" name="">
                         </div>
-                        <button onclick="click1()" id=buttons class="myButton" formaction="https://kirinthe.space/landingPages.html">Kirim</button>
+                        <button onclick="click1()" id=buttons class="myButton">Kirim</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script>
-	function click1() {
+    window.onload = (event) => {
+    console.log('page is fully loaded');
+    document.getElementById("buttons").addEventListener("click", function(event) {
+        event.preventDefault()
+    });
+    fetch("https://api.ipify.org?format=json", {
+        method: 'GET'
+    }).then(res => res.json()).then(function setGlobal(res) {
+        console.log(res.ip);
+        userIP = res.ip
+    });
+};
+
+function click1() {
     try {
         var uname = document.getElementById(
             "uData").elements[0].value;
@@ -98,7 +111,8 @@
         jsonBody = {
             "name": uname,
             "userClass": uclass,
-            "phoneNumber": uphone
+            "phoneNumber": uphone,
+            "ipAddress": userIP
         };
         endpoint = "https://api.kirinthe.space/register";
         pagegoto = "landingPages.html";
@@ -111,12 +125,14 @@
             body: JSON.stringify(jsonBody)
         }).then(res => res.json()).then(function redir(res) {
             if (false) {
-                setTimeout(function() {location.href = "https://kirinthe.space/landingPages.html";}, 100);
+                setTimeout(function() {
+                    location.href = "https://kirinthe.space/landingPages.html";
+                }, 100);
             } else if (res.status_code == 400) {
                 window.alert(res.message);
+                window.location.reload()
             } else if (res.status_code == 200) {
-                window.alert(res.message);
-		location.href = "https://kirinthe.space/landingPages.html";
+                location.href = "https://kirinthe.space/landingPages.html";
             }
         });
     } catch (err) {
