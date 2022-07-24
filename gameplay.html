@@ -48,6 +48,18 @@
     text-decoration: none;
     cursor: pointer;
     }
+    .loading {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 999 !important;
+        background-color: #0D0D29;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: 2s;
+    }
     body {
         font-family: 'Anonymous Pro', monospace !important;
         background-color: #0D0D29;
@@ -102,6 +114,11 @@
 </audio>
 <body>
     
+    <section class="loading">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_rst3usxp.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>
+    </section>
+
     <section class="navigasi">
         <div class="container">
             <nav class="navbar">
@@ -147,11 +164,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script>
-        gsap.from('.navigasi', {duration: 2, y: -500, opacity: 0, ease: 'bounce'})
-        gsap.from('#canvasku', {duration: 2, opacity: 0, ease: 'bounce'})
-        gsap.from('.button', {duration: 2, opacity: 0, ease: 'bounce'})
-        gsap.from('.buttonBack', {duration: 2, y: 500, opacity: 0, ease: 'bounce'})
-        gsap.from('.footer', {duration: 2, y: 500, opacity: 0, ease: 'bounce'})
+        let loader = document.querySelector('.loading');
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.style.display = 'none';
+                loader.style.opacity = '0';
+            }, 1000);
+        });
+        gsap.from('.navigasi', {duration: 2, delay: 1, y: -500, opacity: 0, ease: 'bounce'})
+        gsap.from('#canvasku', {duration: 2, delay: 1, opacity: 0, ease: 'bounce'})
+        gsap.from('.button', {duration: 2, delay: 1, opacity: 0, ease: 'bounce'})
+        gsap.from('.buttonBack', {duration: 2, delay: 1, y: 500, opacity: 0, ease: 'bounce'})
+        gsap.from('.footer', {duration: 2, delay: 1, y: 500, opacity: 0, ease: 'bounce'})
     </script>
     <script src="mobil.js"></script>
     <div id="myModal" class="modal">
@@ -198,6 +223,8 @@
         audioplay.play();
     }
     }
+
+    
     </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
