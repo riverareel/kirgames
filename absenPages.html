@@ -8,6 +8,19 @@
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+    .loading {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 999 !important;
+        background-color: #0D0D29;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: 2s;
+    }
+    
     body {
         background-color: #0D0D29;
         font-family: 'Anonymous Pro', monospace;
@@ -53,6 +66,11 @@
 
 </style>
 <body>
+    <section class="loading">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_rst3usxp.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>
+    </section>
+
     <section class="navigasi">
         <div class="container">
             <nav class="navbar">
@@ -102,9 +120,18 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script>
-        gsap.from('.navigasi', {duration: 2, y: -500, opacity: 0, ease: 'bounce'})
-        gsap.from('.absenGambar', {duration: 2, opacity: 0, ease: 'bounce'})
-        gsap.from('.linkAbsen', {duration: 2, opacity: 0, ease: 'bounce'})
+        let loader = document.querySelector('.loading');
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.style.display = 'none';
+                loader.style.opacity = '0';
+            }, 1000);
+        });
+
+        gsap.from('.navigasi', {duration: 2, delay: 1, y: -500, opacity: 0, ease: 'bounce'})
+        gsap.from('.absenGambar', {duration: 2, delay: 1, opacity: 0, ease: 'bounce'})
+        gsap.from('.linkAbsen', {duration: 2, delay: 1, opacity: 0, ease: 'bounce'})
     </script>
     <script>
     window.onload = (event) => {
