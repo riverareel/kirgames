@@ -21,7 +21,9 @@ let stone
 let nyawa = 3
 
 window.onload = function () {
- // window.addEventListener("contextmenu", function(e) { e.preventDefault(); })
+ 	const audioplay = new Audio("https://kirinthe.space/asset/undertale.m4a");
+  audioplay.loop = true;
+  audioplay.play();
   window.resizeTo(
     window.screen.availWidth,
     window.screen.availHeight
@@ -163,10 +165,9 @@ function batu() {
     console.log(nyawa);
     if (nyawa == 0){
       clearInterval(gameloop)
-      if (confirm('Mobil Tergelincir, Ulangi ?!')) {
-        window.location.reload()
+      if (confirm('Nyawa habis! Silahkan refresh untuk mulai ulang!')) {
       } else {
-        alert('Silahkan Tekan "F5" untuk memulai permainan')
+        alert('Nyawa habis! Silahkan refresh untuk mulai ulang!')
       }
     }
   }
