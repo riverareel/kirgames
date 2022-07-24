@@ -12,7 +12,9 @@
         background-color: #0D0D29;
         font-family: 'Anonymous Pro', monospace;
     }
-
+    .navigasi {
+        background-color: #0D0D29 !important;
+    }
     form {
         margin: auto;
     }
@@ -51,6 +53,18 @@
 
 </style>
 <body>
+    <section class="navigasi">
+        <div class="container">
+            <nav class="navbar">
+                <a class="navbar-brand" href="#">
+                    <img src="asset/logo/20220129_165326 (1).png" alt="" width="100" height="100">
+                </a>
+                <a class="navbar-brand d-flex justify-content-end" href="#">
+                    <img src="asset/logo/20220723_181131_0000 (1).png" alt="" width="100" height="100">
+                </a>
+            </nav>
+        </div>
+    </section>
 
     <div class="container">
         <div class="row">
@@ -60,7 +74,7 @@
                     <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_ojjrkacr.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop  autoplay class="absenGif"></lottie-player>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 linkAbsen">
                 <h3 class="judulAbsen">Absen Yuk...</h3>
                 <div class="absen">
                     <form id="uData" name="userData">
@@ -86,6 +100,12 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script>
+        gsap.from('.navigasi', {duration: 2, y: -500, opacity: 0, ease: 'bounce'})
+        gsap.from('.absenGambar', {duration: 2, opacity: 0, ease: 'bounce'})
+        gsap.from('.linkAbsen', {duration: 2, opacity: 0, ease: 'bounce'})
+    </script>
     <script>
     window.onload = (event) => {
     console.log('page is fully loaded');
