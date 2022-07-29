@@ -113,4 +113,104 @@ function parseURLParameters(){var y;if(y=0<window.location.hash.length?window.lo
 break;case "author":case "title":case "firstScene":case "fallback":case "preview":case "panorama":case "config":c[H]=decodeURIComponent(l);break;default:anError("An invalid configuration parameter was specified: "+H);return}}var k;c.config?(k=new XMLHttpRequest,k.onload=function(){if(200!=k.status){var l=document.createElement("a");l.href=c.config;l.textContent=l.href;anError("The file "+l.outerHTML+" could not be accessed.")}else{l=JSON.parse(k.responseText);void 0===l.basePath&&(l.basePath=c.config.substring(0,
 c.config.lastIndexOf("/")+1));for(var p in l)c.hasOwnProperty(p)||(c[p]=l[p]);"title"in c&&(document.title=c.title);c.escapeHTML=!0;viewer=pannellum.viewer("container",c)}},k.open("GET",c.config),k.send()):("title"in c&&(document.title=c.title),c.escapeHTML=!0,viewer=pannellum.viewer("container",c))}else anError("No configuration options were specified.")}
 "file:"==window.location.protocol?anError("Due to browser security restrictions, Pannellum can't be run from the local filesystem; some sort of web server must be used."):parseURLParameters();
-</script></body></html>
+</script><div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>KIRVerse Augmented Reality, by IT Design x IT Coding SMAN 2 Jakarta</p>
+    </div>
+    
+    </div></body>
+<script>
+    
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    
+    modal.style.display = "block";
+    
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    var context = new AudioContext();
+    const audioplay = new Audio("https://kirinthe.space/asset/panomusic.m4a");
+    audioplay.loop = true;
+    audioplay.play();
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        var context = new AudioContext();
+        const audioplay = new Audio("https://kirinthe.space/asset/panomusic.m4a");
+        audioplay.loop = true;
+        audioplay.play();
+    }
+    }
+
+    
+    </script><style>@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+    /* The Modal (background) */
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    }
+    .loading {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 999 !important;
+        background-color: #0D0D29;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: 2s;
+    }
+    body {
+        font-family: 'Anonymous Pro', monospace !important;
+        background-color: #0D0D29;
+    }</style></html>
