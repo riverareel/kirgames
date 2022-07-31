@@ -107,7 +107,7 @@
                             <option value="X D (X IPS 1)">X D (X IPS 1)</option>
                             <option value="X E (X IPS 2)">X E (X IPS 2)</option>
                             <option value="X F (X IPS 3)">X F (X IPS 3)</option>
-			                <option value="Home Visitor">Visitor</option>
+			    <option value="Home Visitor">Visitor</option>
                             </select>
                         </div>
                         <div class="input-group mb-3">
@@ -155,8 +155,11 @@ function click1() {
             "uData").elements[1].value;
         var uphone = document.getElementById(
             "uData").elements[2].value;
-        let button = document.querySelector('myButton');
-        button.disabled = true;
+        if (clicked === true){
+		return "Gotcha"
+	}else{
+		clicked = true
+	}
 
         jsonBody = {
             "name": uname,
