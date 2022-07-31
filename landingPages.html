@@ -69,6 +69,13 @@
         color: #0D0D29;
     }
 
+    iframe {
+        padding: 1em;
+        background-color:#0D0D29;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        border-radius: 2em;
+    }
+
     .myButton {
         background-color: #2296E3;
         padding: 10px;
@@ -170,7 +177,7 @@
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                     <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_w51pcehl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay class="gifAssets" data-aos="flip-up"></lottie-player>
 
-                    <p class="mt-3 teksDivisi" data-aos="zoom-in">DIVISI CODING INI AKAN MENJADI TEMPAT KALIAN UNTUK MEMPELAJARI DAN MEMAHAMI BAHASA PEMROGRAMAN. KALIAN AKAN DILATIH OLEH KAKAK-KAKAK YANG SUDAH AHLI DARI DASARNYA LOH!!</p>
+                    <p class="mt-3 teksDivisi" data-aos="zoom-in">Di KIR IT Coding kalian bakal belajar cara membuat program dari dasarnya, loh ! Kalian juga bisa membuat program sesuai yang kalian mau. Divisi ini cocok banget untuk kalian yang mau belajar coding.</p>
                     <button class="myButton" data-aos="fade-up"><a href="/gameplay.html" class="linkButton">Kepoin Yuk</a></button>
                 </div>
                 <div class="col-md-6">
@@ -178,26 +185,20 @@
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                     <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_2imlehvj.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay class="gifAssets" data-aos="flip-up"></lottie-player>
 
-                    <p class="mt-3 teksDivisi" data-aos="zoom-in">MEMPELAJARI SEPUTAR :
-1. SENI RUPA 
-2. PERMAINAN WARNA
-3. POSTER, logo, dan animasi
-4. komponen dasar menggambar
-
-KAPAN LAGI IKUT SUB-organisasi sambil melatih skill kesenian kalian? </p>
+                    <p class="mt-3 teksDivisi" data-aos="zoom-in">di KIR IT Design kalian bakal belajar menggambar secara digital. Kalian juga akan belajar tentang color theory, loh ! Divisi ini juga akan membuat banyak karya seni rupa. Kalau kalian punya hobi menggambar atau ingin belajar menggambar, ayok masuk ke IT Design !</p>
                     <button class="myButton mb-5" data-aos="fade-up"><a href="/panorama.html?panorama=https://kirinthe.space/asset/panorama.png&title=KIRVerse&autoRotate=-10&autoLoad=true" class="linkButton">Kepoin Yuk</a></button>
                 </div>
-		<div class="container mt-5">
-<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/735141453?h=7703dfa90a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="INTERVIEW KIR FIX.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>        
-</div>
-	<p></p>
-	<p></p>
-	<h5></h5>
-<div class="row mt-5">
-            <div class="col d-flex justify-content-center align-items-center buttonBack">
-                <button class="myButton"><a href="https://kirinthe.space/contactPages.html" class="linkButton">Contact Us!</a></button>   
             </div>
-        </div>
+            <div class="row mt-5 videoInterview" data-aos="fade-up">
+                <div class="col">
+                    <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/735142131?h=fc18f416fa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IMG_4368.MOV"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>       
+            </div>
+            <div class="row mt-5" data-aos="fade-up">
+                <div class="col d-flex justify-content-center align-items-center buttonBack">
+                    <button class="myButton"><a href="https://kirinthe.space/contactPages.html" class="linkButton">Contact Us!</a></button>   
+                </div>
             </div>
         </div>
     </section>
@@ -235,6 +236,8 @@ KAPAN LAGI IKUT SUB-organisasi sambil melatih skill kesenian kalian? </p>
                 loader.style.opacity = '0';
             }, 1000);
         });
+        gsap.from('.svgJumbotron', {duration: 2, delay: 1, x: -500, opacity: 0, ease: 'bounce'})
+        gsap.from('.textJumbotron', {duration: 2, delay: 1, x: 500, opacity: 0, ease: 'bounce'})
         gsap.registerPlugin(TextPlugin);
         gsap.to('.judulPengertian', {duration: 5, delay: 1, text: 'Kelompok Ilmiah Remaja'})
         gsap.to('.judulDivisi', {duration: 5, delay: 1, text: 'Divisi'})

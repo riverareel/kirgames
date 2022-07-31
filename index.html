@@ -107,7 +107,7 @@
                             <option value="X D (X IPS 1)">X D (X IPS 1)</option>
                             <option value="X E (X IPS 2)">X E (X IPS 2)</option>
                             <option value="X F (X IPS 3)">X F (X IPS 3)</option>
-			    <option value="Home Visitor">Visitor</option>
+			                <option value="Home Visitor">Visitor</option>
                             </select>
                         </div>
                         <div class="input-group mb-3">
@@ -130,7 +130,6 @@
             }, 1000);
         });
 
-        gsap.from('.navigasi', {duration: 2, delay: 1, y: -500, opacity: 0, ease: 'bounce'})
         gsap.from('.absenGambar', {duration: 2, delay: 1, opacity: 0, ease: 'bounce'})
         gsap.from('.linkAbsen', {duration: 2, delay: 1, opacity: 0, ease: 'bounce'})
     </script>
@@ -156,6 +155,9 @@ function click1() {
             "uData").elements[1].value;
         var uphone = document.getElementById(
             "uData").elements[2].value;
+        let button = document.querySelector('myButton');
+        button.disabled = true;
+
         jsonBody = {
             "name": uname,
             "userClass": uclass,
