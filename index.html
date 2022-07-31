@@ -139,6 +139,7 @@
     document.getElementById("buttons").addEventListener("click", function(event) {
         event.preventDefault()
     });
+    clicked = false
     fetch("https://api.ipify.org?format=json", {
         method: 'GET'
     }).then(res => res.json()).then(function setGlobal(res) {
